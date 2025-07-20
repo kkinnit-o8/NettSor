@@ -1,0 +1,64 @@
+:root {
+  --primary: #2F80ED;
+  --background: #ffffff;
+  --text: rgb(231, 231, 231);
+  --muted: #F3F4F6;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background);
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar a {
+position: relative; 
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;                /* Adjust line below the text */
+  height: 2px;                 /* Thickness of the line */
+  width: 100%;
+  background-color: #004aad;
+  transform: scaleX(0);        /* Start hidden */
+  transform-origin: left;      /* Scale from left to right */
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);        /* Full width on hover */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: larger;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+

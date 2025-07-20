@@ -1,0 +1,89 @@
+🖥️ Luxsite - Homepage Layout
+
+
+navbar
+
+🌐 1. Hero Section
+Large, bold headline:
+“Modern Websites for Local Businesses”
+
+Subheadline:
+“Custom-designed websites built from scratch. Pay only if you're satisfied.”
+
+CTA button:
+🔹 Let’s Talk → scrolls to contact
+🔹 View My Work → scrolls to portfolio
+
+💡 Background: clean color (white or black) + a subtle animation or gradient glow (since it's "Luxsite").
+
+💼 2. What I Offer
+3 columns or cards:
+
+Custom Websites
+Tailored HTML/CSS/JS websites for cafés, salons, and more.
+
+No-Risk Guarantee
+Pay only if you’re satisfied. Perfect for first-time clients.
+
+Modern & Mobile-Friendly
+Responsive design that works on all screens.
+
+🖼️ 3. Portfolio
+Simple grid (2–4 columns)
+
+Each card includes:
+
+Screenshot
+
+Project name
+
+Short description
+
+(Optional) link to live demo
+
+Placeholder projects can say “Coming Soon” until you have real ones.
+
+🧑‍💼 4. About Me
+Small section with photo or icon (optional)
+
+Short text:
+“Hey, I’m Kasper — a young web developer who builds clean, fast websites for small businesses. I work with HTML, CSS, JS, and Firebase.”
+
+💬 5. Testimonials (once you get clients)
+One-liner quotes from clients with names and businesses.
+
+Add later — but leave space for it in design.
+
+📬 6. Contact / Call To Action
+Friendly headline:
+“Want a website for your business?”
+
+Contact options:
+
+Simple contact form (name, email, message)
+
+OR just:
+
+📞 Phone number
+
+📧 Email
+
+📱 Instagram (optional)
+
+🔻 7. Footer
+Luxsite logo or name
+
+Copyright
+
+Quick links (Home, Portfolio, Contact)
+
+📱 Responsive Design Tips
+Make sure it looks good on:
+
+Mobile (small screens → 1 column layout)
+
+Tablet
+
+Desktop
+
+Use flexbox or grid with media queries (@media in CSS) to adapt layout.
