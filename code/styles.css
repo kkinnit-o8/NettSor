@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* === Backgrounds === */
+  --color-bg: #050505;              /* Main page background (very dark, near black) */
+  --color-surface: #0e0e10;         /* Surface background (for cards, modals, sections) */
+
+  /* === Text === */
+  --color-text-main: #f3f4f6;       /* Primary text color (almost white, high contrast) */
+  --color-text-muted: #9ca3af;      /* Secondary/muted text (used for descriptions, labels) */
+
+  /* === Primary Accent Colors === */
+  --color-primary: #3b82f6;         /* Main accent color (used on links, active buttons, highlights) */
+  --color-primary-glow: #60a5fa;    /* Lighter version for glowing effects and gradients */
+
+  /* === Secondary Accent Colors === */
+  --color-secondary: #9333ea;       /* Secondary accent (used sparingly for contrast, highlights) */
+  --color-secondary-glow: #c084fc;  /* Lighter purple for glow effects or hover transitions */
+
+  /* === Buttons === */
+  --color-button-bg: #111827;       /* Button background (neutral dark) */
+  --color-button-hover: #1e40af;    /* Button hover background (deep, vivid blue) */
+
+  /* === Borders & Dividers === */
+  --color-border: #1f2937;          /* Used for card borders, dividers, inputs */
+
+  /* === Glows / Shadows === */
+  --color-glow-blue: rgba(96, 165, 250, 0.3);   /* Blue glow for shadows, hover rings, outlines */
+  --color-glow-purple: rgba(192, 132, 252, 0.3);/* Purple glow for shadows, hover rings, outlines */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  background-color: rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* keeps the navbar on top when scrolling */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 40rem;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-text-main);
+}
+.nav-links a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  color: var(--color-text-main);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: var(--color-button-bg);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--color-button-hover);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
