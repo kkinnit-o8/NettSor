@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetSor</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NetSor</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">NetSør</div>
-            <ul class="nav-links">
-            <li><a href="#services">Tjenester</a></li>
-            <li><a href="#portfolio">Portefølje</a></li>
-            <li><a href="#about">Om oss</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <div  class="hero-content">
-            <h1>Nettsider for alle bedrifter i Norge</h1>
-            <p>Vi lager moderne, enkle og profesjonelle nettsider tilpasset din virksomhet.</p>
-            <a href="#contact" class="hero-btn">Kontakt oss</a>
+  <header>
+    <nav class="navbar">
+      <div class="logo">NetSør</div>
+      <ul class="nav-links">
+        <li><a href="#services">Tjenester</a></li>
+        <li><a href="#portfolio">Portefølje</a></li>
+        <li><a href="#about">Om oss</a></li>
+        <li><a href="#contact" class="contact-btn">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Nettsider for alle bedrifter i Norge</h1>
+      <p>Vi utvikler, redesigner og vedlikeholder nettsider – alltid med fokus på brukervennlighet.</p>
+      <a href="#contact" class="hero-btn">Kontakt oss</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Dette kan vi hjelpe deg med</h2>
+    <div id="carousel-all">
+      <button class="carousel-btn prev">&#8592;</button>
+      
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="service">
+            <h3>Utvikling</h3>
+            <p>Vi bygger moderne, responsive nettsider fra bunnen av med fokus på ytelse og brukervennlighet.</p>
+          </div>
+          <div class="service">
+            <h3>Redesign</h3>
+            <p>Oppgrader din eksisterende nettside med et friskt, moderne design som engasjerer dine kunder.</p>
+          </div>
+          <div class="service active">
+            <h3>Vedlikehold</h3>
+            <p>Hold nettsiden din oppdatert og sikker med våre vedlikeholdspakker og teknisk support.</p>
+          </div>
+          <div class="service">
+            <h3>SEO</h3>
+            <p>Øk synligheten din i søkemotorer med våre SEO-tjenester og få flere kunder til din bedrift.</p>
+          </div>
+          <div class="service">
+            <h3>UX/UI</h3>
+            <p>Optimaliser brukeropplevelsen med gjennomtenkt design og intuitive grensesnitt.</p>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <button class="carousel-btn next">&#8594;</button>
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
