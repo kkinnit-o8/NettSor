@@ -1,3 +1,13 @@
+cards_content = {
+    "Utvikling": `
+        <h2>Utvikling</h2>
+        <p>Vi bygger moderne, responsive nettsider fra bunnen av med fokus på ytelse og brukervennlighet.</p>
+        <p>Våre utviklere har erfaring med HTML, CSS, JavaScript, databaser og mye mer.</p>
+        <p>Enten du trenger en enkel nettside eller en kompleks webapplikasjon, kan vi hjelpe deg.</p>
+        `
+    
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
     const prevBtn = document.querySelector('.carousel-btn.prev');
@@ -7,6 +17,85 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
     const cardWidth = 320; // 300px card + 20px gap
     const totalCards = services.length;
+
+
+    function closeModal(overlay, modal) {
+
+        overlay.classList.add('exit');
+        modal.classList.add('exit');
+
+        setTimeout(() => {
+            overlay.remove();
+        }, 300); // Match the exit animation duration1
+    }
+
+    function showModal(service) {
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+
+        const effect = document.createElement('div');
+        effect.classList.add('mouse-effect');
+        overlay.appendChild(effect);
+
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        const modalcontent = document.createElement('div');
+        modalcontent.classList.add('modal-content');
+
+        const name = service.querySelector('h3').textContent;
+        modalcontent.innerHTML = cards_content[name];
+        modalcontent.innerHTML += `
+            <div class="close-modal-btn">Lukk</div>
+        `;
+
+        modal.appendChild(modalcontent);
+        overlay.appendChild(modal);
+
+        overlay.addEventListener('mousemove', (e) => {
+            const isOverModal = modalcontent.contains(e.target);
+            if (isOverModal) return;
+
+            const trail = document.createElement('div');
+            trail.classList.add('trail');
+            trail.style.left = `${e.clientX}px`;
+            trail.style.top = `${e.clientY}px`;
+            overlay.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 500);
+        });
+
+        modal.querySelector('.close-modal-btn').addEventListener('click', () => {
+            closeModal(overlay, modalcontent);
+        });
+
+        // ✅ Click on overlay background closes modal
+        overlay.addEventListener('click', (e) => {
+            const isOverModal = modalcontent.contains(e.target);
+            if (isOverModal) return;
+            closeModal(overlay, modalcontent);
+        });
+
+        document.body.appendChild(overlay);
+    }
+
+
+
+    
+    services.forEach((service, index) => {
+        service.addEventListener('click', () => {
+            if (index === currentIndex) {
+                // Card is already active → show modal
+                showModal(service);
+            } else {
+                // Card is not active → scroll to it
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
+    });
     
     // Update carousel position and active state
     function updateCarousel() {
@@ -51,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     startX = e.touches[0].clientX;
     isDragging = true;
     });
-    
+      
     carousel.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
     e.preventDefault();
@@ -95,3 +184,4 @@ document.addEventListener('DOMContentLoaded', function() {
     //   updateCarousel();
     // }, 4000); // Change slide every 4 seconds
 });
+
