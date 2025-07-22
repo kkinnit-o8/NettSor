@@ -1,11 +1,25 @@
 cards_content = {
     "Utvikling": `
         <h2>Utvikling</h2>
-        <p>Vi bygger moderne, responsive nettsider fra bunnen av med fokus på ytelse og brukervennlighet.</p>
-        <p>Våre utviklere har erfaring med HTML, CSS, JavaScript, databaser og mye mer.</p>
-        <p>Enten du trenger en enkel nettside eller en kompleks webapplikasjon, kan vi hjelpe deg.</p>
-        `
-    
+        <h3>Moderne, responsivt design byggd for alle enheter</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml-icon lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <ul>
+            <li>Responsivt design</li>
+            <p> Nettsiden fungerer og ser bra ut på mobil, nettbrett og PC. </p>
+            <br>
+            <li>Eget kontrollpanel</li>
+            <p> Du kan enkelt oppdatere innholdet selv – perfekt for menyer, blogginnlegg, produkter og mer. </p>
+            <br>
+            <li>Legg til / rediger / slett innhold</li>
+            <p>Full kontroll over teksten og innholdet på nettsiden din – helt uten koding.</p>
+            <br>
+            <li>Sikker innlogging for administratorer</li>
+            <p>du (eller de du gir tilgang) kan logge inn og gjøre endringer.</p>
+            <br>
+            <li>Valgfrie tillegg</li>
+            <p> Skjemaer, animasjoner, bildegallerier, bookingsystemer og mer – tilpasses dine behov. </p>
+        </ul>
+            `
 }
 
 document.addEventListener('DOMContentLoaded', function() {
