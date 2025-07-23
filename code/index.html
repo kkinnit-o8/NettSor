@@ -61,16 +61,60 @@
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Kontakt oss</h2> 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="form">
-      <input type="text" name="name" placeholder="Navn" required>
-      <input type="email" name="email" placeholder="E-post" required>
-      <textarea name="message" placeholder="Melding" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <section class="about" id="about">
+    <div class="about-image fade-in">
+      <img src="/img/tai-bui-HzVBe-8frwc-unsplash.jpg" alt="Om oss">
+    </div>
+    <div class="about-content fade-in">
+      <h2>Om oss</h2>
+      <div>
+        <p>Vi brenner for å hjelpe både bedrifter og enkeltpersoner i Norge med å skape en sterk digital tilstedeværelse. Enten du driver en liten bedrift, ønsker å starte en nettbutikk eller trenger en personlig nettside, skreddersyr vi løsninger som passer dine behov.</p>
+        <br>
+        <p>Hos oss får du en nettside som ikke bare ser bra ut, men også fungerer sømløst for dine kunder. Vi legger vekt på godt design, enkel navigasjon og tekniske løsninger som gjør hverdagen din enklere.</p>
+      </div>
+      <h3>Nettsør – Din visjon, vår kode.</h3>
+    </div>
   </section>
 
+  <section id="contact" class="contact fade-in">
+    <h2>Kontakt oss</h2>
+    <p>Har du spørsmål eller ønsker å starte et prosjekt? Fyll ut skjemaet under, så tar vi kontakt så snart som mulig.</p>
+    <div class="contact-container">
+      <div class="contact-side">
+        <div class="contact-img">
+          <img src="/img/contact forum.png" alt="">
+        </div>
+      </div>
+
+      <div class="contact-forum">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Navn*</label>
+          <input type="text" id="name" name="name" placeholder="Navnet ditt" required>
+
+          <label for="email">E-post*</label>
+          <input type="email" id="email" name="_replyto" placeholder="E-posten din" required>
+
+          <label for="phone">Telefonnummer</label>
+          <input type="tel" id="phone" name="phone" placeholder="Telefonnummer (valgfritt)">
+
+          <label for="message">Melding*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send melding</button>
+      </form>
+    </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 NetSør. Alle rettigheter reservert.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
 
   <script src="script.js"></script>
 </body>

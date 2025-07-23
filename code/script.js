@@ -31,6 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
     const cardWidth = 320; // 300px card + 20px gap
     const totalCards = services.length;
+    const faders = document.querySelectorAll('.fade-in');
+
+    const options = {
+    threshold: 0.2 // 0.2 = 20% of element visible
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // stops watching once shown
+    });
+    }, options);
+
+    faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+    });
 
 
     function closeModal(overlay, modal) {
