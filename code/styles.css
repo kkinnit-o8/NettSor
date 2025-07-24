@@ -44,6 +44,15 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+@keyframes pulseGlow {
+  0%, 100% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 10%;
+  }
+}
+
 header {
   background-color: rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
@@ -579,6 +588,112 @@ header {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.footer-content {
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-brand{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footer-link-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link-column a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.footer-link-column a:hover {
+  color: var(--color-text-main);
+}
+
+.footer-link-column h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.footer-link-column ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--color-primary-glow);
+}
+
+.contact-info p {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.contact-info h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text-muted);
+  transition: fill 0.3s ease;
+}
+
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-container {
@@ -669,3 +784,109 @@ header {
   }
   
 }
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*==== responsive adjustments ====*/
+
+  /* Responsive Navbar */
+.hamburger {
+  display: none; /* Hidden on desktop, shown on mobile via media query */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 7px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-text-main);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem; /* Added padding for better spacing */
+    animation: fade-in 0.8s ease-in-out; /* Remove navfadein gap animation on mobile */
+    align-items: center;
+    gap:0;
+    z-index: 1002;
+  }
+
+  .nav-links {
+    display: none;;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger icon on mobile */
+  }
+
+  .overlay-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.94);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7rem;
+    gap: 1rem;
+    text-align: left;
+    transition: opacity 0.3s ease;
+}
+
+  .overlay-links a {
+    color: var(--color-text-muted);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .overlay-links a:hover {
+    color: var(--color-text-main);
+  }
+
+  .overlay-links div {
+    width: 100%;
+    padding: 10px 20px;
+    transform: translateY(-20px);
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .overlay-links.exit {
+    opacity: 0;
+    pointer-events: none;
+}
+  
+  .nav-links.active div:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links.active div:nth-child(2) { animation-delay: 0.25s; }
+  .nav-links.active div:nth-child(3) { animation-delay: 0.4s; }
+
+  .overlay-links { z-index: 1000; }
+  .nav-links-full { z-index: 1001; }
+  .navbar, header { z-index: 1002; }
+
+}
+

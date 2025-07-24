@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
     const services = Array.from(document.querySelectorAll('.service'));
-    
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
     const cardWidth = 320; // 300px card + 20px gap
     const totalCards = services.length;
@@ -36,6 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const options = {
     threshold: 0.2 // 0.2 = 20% of element visible
     };
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.querySelector('.navbar');
+
+    let link_menu = false
+
+    hamburger.addEventListener('click', () => {
+    hamburger_func()
+    });
 
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
@@ -49,6 +58,47 @@ document.addEventListener('DOMContentLoaded', function() {
     appearOnScroll.observe(fader);
     });
 
+    function openlinks(){
+        link_menu = true;
+
+        const links = Array.from(document.querySelectorAll('.link'));
+
+        overlay = document.createElement('div');
+        overlay.classList.add('overlay-links');
+
+        links.forEach(link => {
+            div = document.createElement('div');
+            div.innerHTML = link.innerHTML;
+
+            div.addEventListener('click', () => {
+                closelinks();});
+
+            overlay.appendChild(div);
+        });
+
+        document.body.appendChild(overlay);
+    }
+
+    function closelinks() {
+    link_menu = false;
+    const overlay = document.querySelector('.overlay-links');
+    if (overlay) {
+        overlay.classList.add('exit');
+        setTimeout(() => {
+            overlay.remove();
+        }, 300); // Match the exit animation duration
+    }
+}   
+
+    function hamburger_func() {
+        if (link_menu) {
+            closelinks()
+        }
+        else {
+            // Open the links overlay
+            openlinks();
+        }
+    }
 
     function closeModal(overlay, modal) {
 
@@ -127,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    
     
     // Update carousel position and active state
     function updateCarousel() {
