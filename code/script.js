@@ -28,7 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const services = Array.from(document.querySelectorAll('.service'));
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
-    const cardWidth = 320; // 300px card + 20px gap
+    // Dynamically calculate card width for responsiveness
+    function getCardWidth() {
+        if (services.length === 0) return 0;
+        return services[0].getBoundingClientRect().width;
+    }
+    // Get the computed gap between cards (in px)
+    function getCardGap() {
+        const carouselStyles = window.getComputedStyle(carousel);
+        const gap = carouselStyles.gap || carouselStyles.columnGap || '0px';
+        return parseFloat(gap);
+    }
     const totalCards = services.length;
     const faders = document.querySelectorAll('.fade-in');
 
@@ -41,6 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
 
     let link_menu = false
+
+    const dotsContainer = document.querySelector('.carousel-dots');
+    // Create dots for each service
+    services.forEach((service, index) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    function updatedots() {
+        const dots = Array.from(dotsContainer.querySelectorAll('span'));
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            }
+            else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
 
     hamburger.addEventListener('click', () => {
     hamburger_func()
@@ -182,13 +216,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update carousel position and active state
     function updateCarousel() {
-    const translateX = -currentIndex * cardWidth + (carousel.parentElement.offsetWidth / 2) - (cardWidth / 2);
-    carousel.style.transform = `translateX(${translateX}px)`;
-    
-    // Update active state
-    services.forEach((service, index) => {
-        service.classList.toggle('active', index === currentIndex);
-    });
+        const cardWidth = getCardWidth();
+        const cardGap = getCardGap();
+        // The total width of a card plus the gap
+        const cardTotal = cardWidth + cardGap;
+        // Center the selected card
+        const translateX = -currentIndex * cardTotal + (carousel.parentElement.offsetWidth / 2) - (cardWidth / 2);
+        carousel.style.transform = `translateX(${translateX}px)`;
+        // Update active state
+        services.forEach((service, index) => {
+            service.classList.toggle('active', index === currentIndex);
+        });
+        updatedots();
     }
     
     // Next button click with infinite loop

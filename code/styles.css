@@ -818,6 +818,38 @@ header {
   transition: all 0.3s;
 }
 
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-direction: row;
+}
+
+.carousel-dots span {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-text-muted);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, scale 0.3s ease, opacity 0.3s ease;
+  opacity: 10%;
+  border: none;
+}
+
+.carousel-dots span.active {
+  background-color: white;
+  opacity: 100%;
+
+  /* Stronger glow effect for active dot */
+  box-shadow: 0 0 10px var(--color-glow-blue),
+              0 0 20px var(--color-glow-blue),
+              0 0 30px var(--color-glow-blue);
+  
+  transform: scale(1.2); /* Slightly larger for emphasis */
+}
+
 @media (max-width: 768px) {
   .navbar {
     display: flex;
@@ -888,5 +920,41 @@ header {
   .nav-links-full { z-index: 1001; }
   .navbar, header { z-index: 1002; }
 
+  .services {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  #carousel-all {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 1rem; /* Added padding for better spacing */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+
+  .service {
+    max-width: 80%;
+    margin: 1rem 0; /* Added margin for spacing */
+    padding: 1.5rem;
+    box-shadow: none; /* Remove shadow on mobile for simplicity */
+    border-radius: 8px;
+    flex: 1 0 auto; /* Allow the service cards to shrink and grow */
+  }
+  .service.active {
+    transform: scale(1); /* Remove scaling effect on active service for mobile */
+  }
 }
 
