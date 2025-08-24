@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const services = Array.from(document.querySelectorAll('.service'));
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
+    let contact_img = document.getElementById("contact-img")
+
+    if (window.innerWidth < 769){
+        contact_img.remove() 
+    }
     // Dynamically calculate card width for responsiveness
     function getCardWidth() {
         if (services.length === 0) return 0;
