@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamically calculate card width for responsiveness
     function getCardWidth() {
         if (services.length === 0) return 0;
-        return services[0].getBoundingClientRect().width;
+        return services[0].getBoundingClientRect().width+1;
     }
     // Get the computed gap between cards (in px)
     function getCardGap() {

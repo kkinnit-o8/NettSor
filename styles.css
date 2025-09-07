@@ -949,7 +949,7 @@ header {
   }
 
   .service {
-    max-width: 80%;
+    max-width: 100%;
     margin: 1rem 0; /* Added margin for spacing */
     padding: 1.5rem;
     box-shadow: none; /* Remove shadow on mobile for simplicity */
