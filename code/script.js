@@ -19,8 +19,84 @@ cards_content = {
             <li>Valgfrie tillegg</li>
             <p> Skjemaer, animasjoner, bildegallerier, bookingsystemer og mer – tilpasses dine behov. </p>
         </ul>
-            `
+            `,
+    "Redesign": `
+        <h2>Redesign</h2>
+        <h3>Frisk opp gamle nettsider med nytt liv</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paintbrush"><path d="M14.622 17.897a2.5 2.5 0 0 0-3.52 0L2 27l3.5 3.5 9.103-9.103a2.5 2.5 0 0 0 0-3.5z"/><path d="M18 3a6 6 0 0 1 0 12h-2"/></svg>
+        <ul>
+            <li>Modernisering</li>
+            <p>Vi gir en gammel nettside et nytt og profesjonelt utseende.</p>
+            <br>
+            <li>Brukervennlighet</li>
+            <p>Forbedret navigasjon og struktur for å gjøre siden enklere å bruke.</p>
+            <br>
+            <li>Oppdatert teknologi</li>
+            <p>Bygger om siden med raskere, sikrere og mer moderne løsninger.</p>
+            <br>
+            <li>Mer engasjerende innhold</li>
+            <p>Bedre visuell stil, grafikk og interaktive elementer.</p>
+        </ul>
+    `,
+
+    "Vedlikehold": `
+        <h2>Vedlikehold</h2>
+        <h3>Vi passer på at nettsiden din alltid fungerer</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-settings" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09c0-.7-.39-1.34-1-1.51a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06c.43-.43.57-1.06.33-1.82a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09c.7 0 1.34-.39 1.51-1 .24-.76.1-1.39-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06c.43.43 1.06.57 1.82.33.61-.17 1-.81 1-1.51V3a2 2 0 1 1 4 0v.09c0 .7.39 1.34 1 1.51.76.24 1.39.1 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06c-.43.43-.57 1.06-.33 1.82.17.61.81 1 1.51 1H21a2 2 0 1 1 0 4h-.09c-.7 0-1.34.39-1.51 1z"/></svg>
+        <ul>
+            <li>Sikkerhetsoppdateringer</li>
+            <p>Vi sørger for at alt holdes oppdatert mot trusler.</p>
+            <br>
+            <li>Backup</li>
+            <p>Automatiske sikkerhetskopier som kan gjenopprettes ved behov.</p>
+            <br>
+            <li>Teknisk support</li>
+            <p>Hjelp når du trenger det – alt fra feilretting til små endringer.</p>
+            <br>
+            <li>Kontinuerlig overvåkning</li>
+            <p>Vi følger med at nettsiden din alltid er oppe og går.</p>
+        </ul>
+    `,
+
+    "SEO": `
+        <h2>SEO</h2>
+        <h3>Bli synlig i Google og andre søkemotorer</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-search" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <ul>
+            <li>Nøkkelord</li>
+            <p>Optimalisering av innhold slik at kundene finner deg på Google.</p>
+            <br>
+            <li>Raskere nettsider</li>
+            <p>Vi forbedrer hastighet, som er viktig både for SEO og brukervennlighet.</p>
+            <br>
+            <li>Strukturert data</li>
+            <p>Vi legger til metadata og riktig oppmerking slik at Google forstår siden bedre.</p>
+            <br>
+            <li>Lokal SEO</li>
+            <p>Spesielt for deg som vil bli funnet av kunder i nærområdet.</p>
+        </ul>
+    `,
+
+    "UX/UI": `
+        <h2>UX/UI</h2>
+        <h3>Design med brukeren i sentrum</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-layout-dashboard" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        <ul>
+            <li>Intuitiv navigasjon</li>
+            <p>Nettsiden blir enkel å forstå og bruke for alle besøkende.</p>
+            <br>
+            <li>Visuelt hierarki</li>
+            <p>Viktig innhold fremheves slik at brukeren raskt finner det de trenger.</p>
+            <br>
+            <li>Kundeopplevelse</li>
+            <p>Designet gir et profesjonelt og tillitsvekkende inntrykk.</p>
+            <br>
+            <li>Tilpasning</li>
+            <p>Vi skreddersyr utseendet slik at det matcher merkevaren din.</p>
+        </ul>
+    `
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
