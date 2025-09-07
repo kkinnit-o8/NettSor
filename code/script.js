@@ -47,9 +47,6 @@ cards_content = {
             <li>Sikkerhetsoppdateringer</li>
             <p>Vi sørger for at alt holdes oppdatert mot trusler.</p>
             <br>
-            <li>Backup</li>
-            <p>Automatiske sikkerhetskopier som kan gjenopprettes ved behov.</p>
-            <br>
             <li>Teknisk support</li>
             <p>Hjelp når du trenger det – alt fra feilretting til små endringer.</p>
             <br>
@@ -104,10 +101,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const services = Array.from(document.querySelectorAll('.service'));
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
-    let contact_img = document.getElementById("contact-img")
+    let contact_img = document.getElementById("contact-side")
 
-    if (window.innerWidth < 769){
-        contact_img.remove() 
+    function remove_img(){
+        if (window.innerWidth < 769){
+        contact_img.style.display = "none"
+        //document.getElementsByClassName("contact-side").style.display = "none"
+    }
+    else{
+        contact_img.style.display = "flex"
+    }
     }
     // Dynamically calculate card width for responsiveness
     function getCardWidth() {
@@ -380,7 +383,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
     }
     });
-    
+    remove_img()
+    window.addEventListener('resize', remove_img);
     // Optional: Auto-play functionality (uncomment to enable)
     // setInterval(() => {
     //   currentIndex = (currentIndex + 1) % totalCards;
