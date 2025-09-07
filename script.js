@@ -102,14 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const services = Array.from(document.querySelectorAll('.service'));
     let currentIndex = Math.floor(services.length / 2); // Start with the middle card
     let contact_img = document.getElementById("contact-side")
+    let about_img = document.getElementById("about-image")
 
     function remove_img(){
         if (window.innerWidth < 769){
         contact_img.style.display = "none"
+        about_img.style.display = "none"
         //document.getElementsByClassName("contact-side").style.display = "none"
     }
     else{
         contact_img.style.display = "flex"
+        about_img.style.display = "flex"
     }
     }
     // Dynamically calculate card width for responsiveness
